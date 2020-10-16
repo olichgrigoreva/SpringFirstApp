@@ -5,10 +5,10 @@ public class MusicPlayer {
 
     //IoC инверсия управления (объект извне)
     public MusicPlayer(Music music) {
-        this.music = music; //полиморфизм
+        this.music = music; //полиморфизм; внедрение зависимости через конструктор
     }
 
-    public void playMusic(){
+    public void playMusic() {
         System.out.println("Playing: " + music.getSong());
     }
 }
