@@ -8,6 +8,13 @@ public class MusicPlayer {
         this.music = music; //полиморфизм; внедрение зависимости через конструктор
     }
 
+    public MusicPlayer() {
+    }
+
+    public void setMusic(Music music) {
+        this.music = music;
+    }
+
     public void playMusic() {
         System.out.println("Playing: " + music.getSong());
     }

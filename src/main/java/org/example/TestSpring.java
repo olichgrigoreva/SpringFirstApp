@@ -13,7 +13,7 @@ public class TestSpring {
 
         //внедрение зависомости (dependency injection) вручную
         //MusicPlayer musicPlayer = new MusicPlayer(music);
-
+        //dependency injection
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
         musicPlayer.playMusic();
         context.close();
