@@ -1,7 +1,16 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
+
 public class MusicPlayer {
     private Music music;
+    private List<Music> musicList = new ArrayList<>();
+
+    public void setMusicList(List<Music> musicList) {
+        this.musicList = musicList;
+    }
 
     private String name;
     private int volume;
@@ -36,5 +45,12 @@ public class MusicPlayer {
 
     public void playMusic() {
         System.out.println("Playing: " + music.getSong());
+    }
+
+    public void playMusicList(){
+        ListIterator<Music> li = musicList.listIterator();
+        while (li.hasNext()){
+            System.out.println(li.next().getSong());
+        }
     }
 }

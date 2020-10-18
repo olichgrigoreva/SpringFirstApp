@@ -15,9 +15,11 @@ public class TestSpring {
         //MusicPlayer musicPlayer = new MusicPlayer(music);
         //dependency injection
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer.playMusic();
+        //musicPlayer.playMusic();
 
         System.out.println(musicPlayer.getName() + " " + musicPlayer.getVolume());
+
+        musicPlayer.playMusicList();
         context.close();
     }
 }
