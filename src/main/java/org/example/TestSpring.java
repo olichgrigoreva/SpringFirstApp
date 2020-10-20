@@ -10,17 +10,7 @@ public class TestSpring {
         );
 
         MusicPlayer firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 
-        //сравнение указателей объектов
-        boolean comparison = firstMusicPlayer == secondMusicPlayer;
-        System.out.println(comparison);
-
-        firstMusicPlayer.setVolume(20);
-        secondMusicPlayer.setVolume(50);
-
-        System.out.println(firstMusicPlayer.getVolume());
-        System.out.println(secondMusicPlayer.getVolume());
 
         context.close();
     }
