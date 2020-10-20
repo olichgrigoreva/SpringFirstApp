@@ -8,18 +8,16 @@ public class TestSpring {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml"
         );
-        //Music music = context.getBean("musicBean", Music.class); //интф подход! (id, интф)
-        //объект с конкретной реализацией берется из applicationContext, т.е. заново компилировать не надо
 
-        //внедрение зависомости (dependency injection) вручную
-        //MusicPlayer musicPlayer = new MusicPlayer(music);
-        //dependency injection
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        //musicPlayer.playMusic();
+        MusicPlayer firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 
-        System.out.println(musicPlayer.getName() + " " + musicPlayer.getVolume());
+        //сравнение указателей объектов
+        boolean comparison = firstMusicPlayer == secondMusicPlayer;
+        System.out.println(comparison);
+        System.out.println(firstMusicPlayer);
+        System.out.println(secondMusicPlayer);
 
-        musicPlayer.playMusicList();
         context.close();
     }
 }
