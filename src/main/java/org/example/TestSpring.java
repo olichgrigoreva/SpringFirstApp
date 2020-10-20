@@ -15,8 +15,12 @@ public class TestSpring {
         //сравнение указателей объектов
         boolean comparison = firstMusicPlayer == secondMusicPlayer;
         System.out.println(comparison);
-        System.out.println(firstMusicPlayer);
-        System.out.println(secondMusicPlayer);
+
+        firstMusicPlayer.setVolume(20);
+        secondMusicPlayer.setVolume(50);
+
+        System.out.println(firstMusicPlayer.getVolume());
+        System.out.println(secondMusicPlayer.getVolume());
 
         context.close();
     }
