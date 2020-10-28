@@ -2,6 +2,10 @@ package org.example;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 @Component
 public class ClassicalMusic implements Music{
     //ограничение в создании объектов через new
@@ -14,16 +18,12 @@ public class ClassicalMusic implements Music{
         return new ClassicalMusic();
     }
 
+    List<String> rockList = new ArrayList<>();
+
     @Override
-    public String getSong() {
-        return "Hungarian Rhapsody";
-    }
-
-    public void doMyInit(){
-        System.out.println("Do my initialization");
-    }
-
-    public void doMyDestroy(){
-        System.out.println("Do my destruction");
+    public List getSong() {
+        String[] arr = {"Wolfgang Amadeus Mozart", "Ludwig van Beethoven", "Richard Strauss"};
+        rockList.addAll(Arrays.asList(arr));
+        return rockList;
     }
 }
