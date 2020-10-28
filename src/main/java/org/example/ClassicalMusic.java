@@ -1,5 +1,8 @@
 package org.example;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ClassicalMusic implements Music{
     //ограничение в создании объектов через new
     private ClassicalMusic() {
